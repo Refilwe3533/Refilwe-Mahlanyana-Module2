@@ -20,3 +20,22 @@ console.log("WINNING category for MTN Business App of the Year in the year 2022"
 console.log(category[number])
 
 //Solution 3
+const fs = require ('fs')
+
+//Data which will write in a file.
+let Data = "App Name - UniWise, Developer - OGO Studio, Category - Educational."
+
+//write data in 'output.txt' .
+fs.writeFile('output.txt', Data, (err) => {
+
+    //in case of a error throw err.
+    if (err) throw err;
+})
+
+console.log ("")
+//Read data from file then log
+fs.readFile('output.txt', (err, Data) => {
+    if (err) throw err;
+    console.log("file content")
+    console.log(Data.toString());
+})
